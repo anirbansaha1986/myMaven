@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="fruit" class="myMaven.Fruit" scope="singleton">
+		<property name="fruitName">
+			<value>Generic Fruit</value>
+		</property>
+	</bean>
+	<bean id="fruitGuava" class="myMaven.Fruit" scope="singleton">
+		<property name="fruitName">
+			<value>Guava</value>
+		</property>
+	</bean>
+	<bean id="fruitMango" class="myMaven.Fruit" scope="singleton">
+		<property name="fruitName">
+			<value>Mango</value>
+		</property>
+	</bean>
+	<bean id="fruitBanana" class="myMaven.Fruit" scope="singleton">
+		<property name="fruitName">
+			<value>Banana</value>
+		</property>
+	</bean>
+	<bean id="fruitKiwi" class="myMaven.Fruit" scope="singleton">
+		<property name="fruitName">
+			<value>Kiwi</value>
+		</property>
+	</bean>
+	<bean id="vegetable" class="myMaven.Vegetable" scope="singleton">
+	<property name="vegItems">
+		<list>
+			<value>Ladies Finger</value>
+			<value>Potato</value>
+			<value>Onion</value>
+			<value>Tomato</value>
+		</list>
+	</property>
+	<property name="fruits">
+		<list>
+			<ref bean="fruitGuava"></ref>
+			<ref bean="fruitMango"></ref>
+			<ref bean="fruitBanana"></ref>
+			<ref bean="fruitKiwi"></ref>	
+		</list>
+	</property>
+	
+	
+	</bean>
+
+</beans>

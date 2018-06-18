@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	<bean id="listExample" class="myMaven.ListExample">
+		<property name="fruits">
+			<list>
+				<value>Apple</value>
+				<value>Mango</value>
+				<value>Pineapple</value>
+			</list>
+		</property>
+		<property name="cricketers">
+			<set>
+				<value>Sachin</value>
+				<value>Rahul</value>
+				<value>Sourav</value>
+			</set>
+		</property>
+		<property name="cc">
+			<map>
+				<entry key="India" value="Delhi"></entry>
+				<entry key="Srilanka" value="Colombo"></entry>
+				<entry key="England" value="London"></entry>
+			</map>
+		</property>
+	</bean>
+	
+		<bean id="arrayListExample" class="myMaven.ArrayListExample">
+		<property name="arrayList">
+			<util:list list-class="java.util.Vector">
+				<value>Apple</value>
+				<value>Mango</value>
+				<value>Pineapple</value>
+			</util:list>
+		</property>
+		<property name="linkedHashSet">
+			<util:set set-class="java.util.LinkedHashSet">
+				<value>Sachin</value>
+				<value>Rahul</value>
+				<value>Sourav</value>
+			</util:set>
+		</property>
+		<property name="linkedHashMap">
+			<util:map map-class="java.util.LinkedHashMap">
+				<entry key="India" value="Delhi"></entry>
+				<entry key="Srilanka" value="Colombo"></entry>
+				<entry key="England" value="London"></entry>
+			</util:map>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="flowerRose" class="myMaven.FlowerRose">
+		<!-- Value attribute for primitive type. "" is mandatory-->
+		<property name="flowerType" value="Rosaceae"></property>
+		<!-- Value child tag."" is not required -->
+		<property name="flowerDesc">
+			<value>This is Rose and this one is very beautiful</value>
+		</property>
+		<!-- Reference attribute for secondary type -->
+		<property name="flowerProperties" ref="flowerAll"></property>
+	</bean>
+	
+	
+	<!-- Inner bean properties -->
+	
+	<bean id="flowerRose1" class="myMaven.FlowerRose">
+		<!-- Value attribute for primitive type. "" is mandatory-->
+		<property name="flowerType" value="Rosaceae"></property>
+		<!-- Value child tag."" is not required -->
+		<property name="flowerDesc">
+			<value>This is Rose and this one is very beautiful</value>
+		</property>
+		<!-- Reference attribute for secondary type -->
+		<property name="flowerProperties">
+		<!-- Inner bean -->
+		<bean id="flowerNew" class="myMaven.Flower">
+			<property name="flowerName" value="Rose"></property>
+			<property name="flowerColor" value="Read"></property>
+			<property name="totalNoOfFlower" value="11"></property>
+		</bean>
+		</property>
+	</bean>
+	
+	<bean id="flower" class="myMaven.Flower">
+	
+		<!-- It will initialize the totalNoOfFlower variable constructor as I am specifying here type. -->
+		<constructor-arg value="Jasmine"></constructor-arg> 
+		
+	</bean>
+	<bean id="flower1" class="myMaven.Flower">
+	
+		<!-- It will initialize the totalNoOfFlower variable constructor as I am specifying here type. -->
+		<constructor-arg value="20" type="int"></constructor-arg>
+		
+	</bean>
+	
+	<bean id="flower2" class="myMaven.Flower">
+	
+		<!-- Ordered constructor called -->
+		<constructor-arg value="Jasmine"></constructor-arg>
+		<constructor-arg value="White"></constructor-arg>
+		
+	</bean>
+	
+	<bean id="flowerAll" class="myMaven.Flower">
+	
+		<!-- Ordered constructor called -->
+		<constructor-arg value="Jasmine"></constructor-arg>
+		<constructor-arg value="11"></constructor-arg>
+		<constructor-arg value="White"></constructor-arg>
+		
+	</bean>
+
+</beans>
